@@ -29,5 +29,7 @@ router.all("/") { request, response, next in
     }
 }
 
+router.get("/", middleware: StaticFileServer(path: "./Assets"))
+
 Kitura.addHTTPServer(onPort: 8090, with: router)
 Kitura.run()

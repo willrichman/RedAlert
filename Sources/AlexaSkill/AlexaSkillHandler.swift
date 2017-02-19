@@ -6,7 +6,7 @@ public class AlexaSkillHandler : RequestHandler {
     }
     
     public func handleLaunch(request: LaunchRequest, session: Session, next: @escaping (StandardResult) -> ()) {
-        let standardResponse = generateResponse(message: "Alexa Skill received launch request")
+        let standardResponse = generateResponse(message: "<speak><audio src=https://706e7a22.ngrok.io/alert1.mp3/></speak>")
         next(.success(standardResponse: standardResponse, sessionAttributes: session.attributes))
     }
     
@@ -23,4 +23,5 @@ public class AlexaSkillHandler : RequestHandler {
         let outputSpeech = OutputSpeech.plain(text: message)
         return StandardResponse(outputSpeech: outputSpeech)
     }
+
 }
